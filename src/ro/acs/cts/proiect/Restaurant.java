@@ -14,5 +14,4 @@ public class Restaurant {
 		return instance;
 	}
 	
-	
 }
