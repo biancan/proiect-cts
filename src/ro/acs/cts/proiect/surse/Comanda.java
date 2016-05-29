@@ -1,65 +1,76 @@
-package ro.acs.cts.proiect;
+package ro.acs.cts.proiect.surse;
 
 public class Comanda {
-	private String fel1;
-	private String fel2;
-	private String bautura;
-	private String desert;
+	private Fel1 fel1;
+	private Fel2 fel2;
+	private Bautura bautura;
+	private Desert desert;
+	private StareComanda stareComanda;
 	
-	private Comanda(){}
+	private Comanda(){
+		this.stareComanda = new ComandaNepreluata();
+	}
 
-	public String getFel1() {
+	public Fel1 getFel1() {
 		return fel1;
 	}
 
-	public void setFel1(String fel1) {
+	public void setFel1(Fel1 fel1) {
 		this.fel1 = fel1;
 	}
 
-	public String getFel2() {
+	public Fel2 getFel2() {
 		return fel2;
 	}
 
-	public void setFel2(String fel2) {
+	public void setFel2(Fel2 fel2) {
 		this.fel2 = fel2;
 	}
 
-	public String getBautura() {
+	public Bautura getBautura() {
 		return bautura;
 	}
 
-	public void setBautura(String bautura) {
+	public void setBautura(Bautura bautura) {
 		this.bautura = bautura;
 	}
 
-	public String getDesert() {
+	public Desert getDesert() {
 		return desert;
 	}
-
-	public void setDesert(String desert) {
+	
+	public void setDesert(Desert desert) {
 		this.desert = desert;
 	}
 	
+	public StareComanda getStareComanda() {
+		return stareComanda;
+	}
+
+	public void setStareComanda(StareComanda stareComanda) {
+		this.stareComanda = stareComanda;
+	}
+
 	public static class Builder{
 		Comanda comanda = new Comanda();
 		
 		public Builder(){}
 		
-		public Builder adaugaFel1(String fel1){
+		public Builder adaugaFel1(Fel1 fel1){
 			comanda.setFel1(fel1);
 			return this;
 		}
 		
-		public Builder adaugaFel2(String fel2){
+		public Builder adaugaFel2(Fel2 fel2){
 			comanda.setFel2(fel2);
 			return this;
 		}
 		
-		public Builder adaugaBautura(String bautura){
+		public Builder adaugaBautura(Bautura bautura){
 			comanda.setBautura(bautura);
 			return this;
 		}
-		public Builder adaugaDesert(String desert){
+		public Builder adaugaDesert(Desert desert){
 			comanda.setDesert(desert);
 			return this;
 		}
@@ -68,5 +79,14 @@ public class Comanda {
 			return comanda;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Comanda cu " + fel1 + ", " + fel2 + ", "
+				+ bautura + ", " + desert + ", "
+				+ stareComanda;
+	}
+	
+	
 
 }

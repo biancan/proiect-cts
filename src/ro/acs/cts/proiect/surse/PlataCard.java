@@ -1,4 +1,4 @@
-package ro.acs.cts.proiect;
+package ro.acs.cts.proiect.surse;
 
 public class PlataCard implements Plata {
 
